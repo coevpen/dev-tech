@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const session = require('express-session'); // need?
+const session = require('express-session'); 
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');   //if helpers are needed
 
@@ -9,18 +9,17 @@ const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
 
-// TODO: cookies
-// const sess = {
-//     secret: 'Super secret secret',
-//     cookie: {},
-//     resave: false,
-//     saveUninitialized: true,
-//     store: new SequelizeStore({
-//       db: sequelize
-//     })
-// };
+const sesh = {
+    secret: 'Super secret secret',
+    cookie: {maxAge: 600000},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+};
 
-//app.use(session(sess));
+app.use(session(sesh));
 
 const hbs = exphbs.create({ helpers });
 

@@ -1,0 +1,98 @@
+:root {
+  --primary-bg-color: rgb(136, 156, 245);
+  --secondary-color: rgb(76, 106, 241);
+  --text-color: rgb(221, 225, 240);
+}
+
+* {
+  color: var(--text-color);
+  background-color: var(--primary-bg-color);
+}
+
+body {
+  background-color: var(--primary-bg-color);
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+a:hover{
+    color: var(--primary-bg-color);
+}
+
+.hero {
+    background-color: var(--secondary-color);
+    text-align: left;
+}
+
+.title, .subtitle{
+    padding-left: 20px;
+}
+
+.no-style{
+    background: none;
+    border: none;
+    padding-bottom: 0;
+}
+
+button:hover {
+    color: var(--primary-bg-color);
+}
+
+main{
+    margin-top: 40px;
+}
+
+/* css for posts */
+.post{
+    padding: 0;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-style: double;
+    border-color: var(--secondary-color);
+}
+
+.post-header{
+    background-color: var(--secondary-color);
+}
+
+.post-body{
+    background-color: var(--primary-bg-color);
+}
+
+#post-header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#post-header-title{
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#post-header-date{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 10px;
+}
