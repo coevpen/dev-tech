@@ -19,58 +19,21 @@
           </h4>
         </div>
         <nav class="hero">
-            <a href="/">Home</a>
-            <a href="Dashboard"></a>
+            <a href="/">Home </a>
+            {{#if loggedIn}}
+            <a href="/dashboard"> Dashboard</a>
             <button id="logout" class="no-style">Logout</button>
-            <a href="">Login</a>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
         </nav>
     </header>
 
-    <main class="container-xxl">
-        <div class="row">
-            <div class="col post">
-                <div class="col post-header">
-                    <div id="post-header" class="post-header">
-                        <div id="post-header-title" class="post-header">Here is the header</div>
-                        <div id="post-header-date" class="post-header">This is the date and poster</div>
-                    </div>
-                    <div class="col post-body">
-                        Here is the post content Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quasi quia, maxime sunt voluptatibus enim reiciendis nemo eum ipsam esse, ea aperiam. 
-                        Dicta delectus commodi repellat! Facilis mollitia officiis beatae ipsam?
-                        Here is the post content Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quasi quia, maxime sunt voluptatibus enim reiciendis nemo eum ipsam esse, ea aperiam. 
-                        Dicta delectus commodi repellat! Facilis mollitia officiis beatae ipsam?
-                        Here is the post content Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quasi quia, maxime sunt voluptatibus enim reiciendis nemo eum ipsam esse, ea aperiam. 
-                        Dicta delectus commodi repellat! Facilis mollitia officiis beatae ipsam?
-                    </div>
-                </div>
-            </div>
-        </div>
+    {{{body}}}
 
-        <div class="row">
-            <div class="col post">
-                <div class="col post-header">
-                    <div id="post-header" class="post-header">
-                        <div id="post-header-title" class="post-header">Here is the header</div>
-                        <div id="post-header-date" class="post-header">This is the date and poster</div>
-                    </div>
-                    <div class="col post-body">
-                        Here is the post content Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quasi quia, maxime sunt voluptatibus enim reiciendis nemo eum ipsam esse, ea aperiam. 
-                        Dicta delectus commodi repellat! Facilis mollitia officiis beatae ipsam?
-                        Here is the post content Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quasi quia, maxime sunt voluptatibus enim reiciendis nemo eum ipsam esse, ea aperiam. 
-                        Dicta delectus commodi repellat! Facilis mollitia officiis beatae ipsam?
-                        Here is the post content Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quasi quia, maxime sunt voluptatibus enim reiciendis nemo eum ipsam esse, ea aperiam. 
-                        Dicta delectus commodi repellat! Facilis mollitia officiis beatae ipsam?
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 </html>
