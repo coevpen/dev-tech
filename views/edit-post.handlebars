@@ -5,7 +5,12 @@
   </h2>
   <form class="edit-post-form">
     <div>
+      <h4>Title:</h4>
       <input name="post-title" type="text" value="{{post.title}}" />
+    </div>
+    <div>
+      <h4>Post:</h4>
+      <input name="post-body" type="text" value="{{post.post_text}}" />
     </div>
     <div>
       by you on {{format_date post.created_at}}
