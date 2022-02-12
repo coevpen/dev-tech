@@ -6,11 +6,10 @@
   <form class="edit-comment-form">
     
     <div>
-      <h4>Comment for the post {{this.title}}:</h4>
-      <input name="comment-body" type="text" value="{{this.comment_text}}" />
+      <input class="comment-body" name="comment-body" type="text" value="{{post.comment_text}}" />
     </div>
     
-    <button class="btn" type="submit">Save Edits</button>
+    <button class="btn edit-comment-btn" type="submit">Save Edits</button>
     <button class="btn delete-comment-btn" type="button">Delete Comment</button>
   </form>
 </article>

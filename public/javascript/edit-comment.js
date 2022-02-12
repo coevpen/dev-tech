@@ -9,7 +9,6 @@ async function editFormHandler(event) {
     const response = await fetch(`/api/comments/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
-        post_id,
         comment_text
       }),
       headers: {
