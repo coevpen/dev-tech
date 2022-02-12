@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session'); 
 const exphbs = require('express-handlebars');
-const helpers = require('./utils/helpers');   //if helpers are needed
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -12,7 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sesh = {
     secret: 'Super secret secret',
-    cookie: {},
+    cookie: {expires: 10 * 60 * 1000}, //10 minutes
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -21,6 +21,17 @@ const sesh = {
 };
 
 app.use(session(sesh));
+// if there is inactivity for 10 minutes, the session expires
+app.get('/session', function(req, res, next) {
+  if(req.session.views){
+    req.session.views++
+    res.end();
+  }
+  else{
+    req.session.views = 1
+    res.end();
+  }
+});
 
 const hbs = exphbs.create({ helpers });
 
