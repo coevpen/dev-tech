@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       });
 });
 
-// gets a post by id
+// gets a comment by id
 router.get('/:id', (req, res) => {
   Comment.findOne({
     where: {

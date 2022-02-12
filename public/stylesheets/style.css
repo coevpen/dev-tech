@@ -62,6 +62,8 @@ button:hover {
 .btn, .edit-link{
     background-color: var(--tertiary-color);
     color: var(--text-color);
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 main{
