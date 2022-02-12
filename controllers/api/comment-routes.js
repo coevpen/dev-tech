@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const res = require('express/lib/response');
-const { Comment } = require('../../models');
+const { Comment, Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
@@ -10,6 +10,45 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
+});
+
+// gets a post by id
+router.get('/:id', (req, res) => {
+  Comment.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'post_id',
+      'comment_text',
+    ],
+    include: [
+      {
+        model: Post,
+        attributes: ['id', 'title', 'post_text', 'user_id'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No comment found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.post('/', withAuth, (req, res) => {
