@@ -1,6 +1,8 @@
 :root {
   --primary-bg-color: rgb(136, 156, 245);
   --secondary-color: rgb(76, 106, 241);
+  --tertiary-color: rgb(62, 82, 172);
+  --textarea: rgb(138, 152, 212);
   --text-color: rgb(221, 225, 240);
 }
 
@@ -56,6 +58,12 @@ button:hover {
     color: var(--primary-bg-color);
 }
 
+
+.btn, .edit-link{
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+}
+
 main{
     margin-top: 40px;
 }
@@ -95,4 +103,56 @@ main{
     justify-content: space-between;
     align-items: flex-end;
     padding-right: 10px;
+}
+
+/* CSS for comments */
+.comments{
+    margin-left: 20px;
+}
+
+.meta{
+    background-color: var(--tertiary-color);
+}
+
+.comment{
+    padding: 0;
+    border: solid 1px;
+    border-color: var(--tertiary-color);
+    background-color: var(--primary-bg-color);
+}
+
+/* Form inputs */
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-post-form, .new-post-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-divs{
+    margin-bottom: 25px;
+}
+
+#post-body {
+    width: 500px;
+    height: 100px;
+}
+
+#post-title{
+    width: 500px;
+    height: 70px;
+}
+
+input{
+    background-color: var(--textarea);
+}
+
+textarea{
+    background-color: var(--textarea);
+    resize: none;
 }

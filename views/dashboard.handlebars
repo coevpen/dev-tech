@@ -2,7 +2,7 @@
   <h2>Create New Post</h2>
 
   <form class="new-post-form">
-    <div>
+    <div class="form-divs">
       <label for="post-title">Title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
@@ -19,7 +19,13 @@
   <h2>Your Posts</h2>
     {{#each posts as |post|}}
     {{> post-info post}}
-    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    <div class="container-xxl">
+      <div class="row">
+        <div class ="col-6">
+          <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        </div>
+      </div>
+    </div>
     {{/each}}
 </section>
 {{/if}}

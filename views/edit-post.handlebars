@@ -6,29 +6,31 @@
   <form class="edit-post-form">
     <div>
       <h4>Title:</h4>
-      <input name="post-title" type="text" value="{{post.title}}" />
+      <input id="post-title" name="post-title" type="text" value="{{post.title}}" />
     </div>
     <div>
       <h4>Post:</h4>
-      <input name="post-body" type="text" value="{{post.post_text}}" />
+      <input id="post-body" name="post-body" type="text" value="{{post.post_text}}" />
     </div>
     <div>
       by you on {{format_date post.created_at}}
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
-    <button type="submit">Save Edits</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <div>
+    <button class ="btn" type="submit">Save Edits</button>
+    <button type="button" class="delete-post-btn btn">Delete post</button>
+    </div>
   </form>
 </article>
 
 <form class="comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea cols="80" rows="8" name="comment-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">Add comment</button>
+    <button class ="btn" type="submit">Add comment</button>
   </div>
 </form>
 
