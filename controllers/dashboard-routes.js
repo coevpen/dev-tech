@@ -82,17 +82,17 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/edit-comment/:id', withAuth, (req, res) => {
   Comment.findByPk(req.params.id, {
     attributes: [
       'id',
-      'title',
-      'post_text',
-      'created_at',
+      'post_id',
+      'user_id',
+      'comment_text',
     ],
     include: [
       {
-        model: Comment,
+        model: Post,
         attributes: ['id', 'title',  'post_text', 'user_id'],
         include: {
           model: User,

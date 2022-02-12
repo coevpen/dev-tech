@@ -1,17 +1,17 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
   <h2>
-    Edit Post
+    Edit Comment
   </h2>
   <form class="edit-comment-form">
     
     <div>
-      <h4>Comment for the post {{comment.post_id.title}}:</h4>
-      <input name="comment-body" type="text" value="{{comment.comment_text}}" />
+      <h4>Comment for the post {{this.title}}:</h4>
+      <input name="comment-body" type="text" value="{{this.comment_text}}" />
     </div>
     
-    <button type="submit">Save Edits</button>
-    <button type="button" class="delete-comment-btn">Delete Comment</button>
+    <button class="btn" type="submit">Save Edits</button>
+    <button class="btn delete-comment-btn" type="button">Delete Comment</button>
   </form>
 </article>
 

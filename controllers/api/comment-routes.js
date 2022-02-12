@@ -21,6 +21,7 @@ router.get('/:id', (req, res) => {
     attributes: [
       'id',
       'post_id',
+      'user_id',
       'comment_text',
     ],
     include: [
